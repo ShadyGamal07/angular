@@ -1,5 +1,51 @@
-<h1> {{storeName}} </h1> 
+<h1> {{storeName |uppercase }} </h1> 
+
 <!-- <img src="../../../../images/1.jpg" > -->
 <img [src]="storeLogo" alt="logo image" >
 
-<h3> {{"We offer an explicit discount of "+10}} </h3>
+<h3 *ngIf="!isNoDiscount"> 
+    We offer an explicit discount of {{ Discount|percent }} 
+</h3>
+
+
+<form action="" >
+    <input list="the category" placeholder="Enter Your the category " >
+    <datalist id="the category" >
+        <option value={{item.Name}} *ngFor="let item of CategoryList">
+    </datalist>
+</form>
+
+
+<div *ngIf="IsPurshased ; then thenBlock ; else elseBlock"></div>
+
+<ng-template #thenBlock>
+    <table border="2">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+    
+        <tr *ngFor="let item of ProductList">
+            <td >{{item.ID}}</td>
+            <td >{{item.Name}}</td>
+            <td >{{item.Quantity}}</td>
+            <td >{{item.Price}}</td>
+            <td > <img [src]="item.Img"> </td>
+        </tr>
+    </table>
+</ng-template>
+
+<ng-template #elseBlock>
+    <div>
+        Thanks for purchasing from our Store {{clientName}}
+    </div>
+</ng-template>
+
+<input [(ngModel)]="clientName" type="text" #txtvalue placeholder="Enter The name of client ">
+<button (click)="toggleShow()" >Buy</button>
+
+
+

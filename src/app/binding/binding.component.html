@@ -1,0 +1,39 @@
+
+
+
+<h1 *ngIf="true">
+    Hello ITI
+</h1>
+
+<h1 *ngIf="isDisplayed">
+    Hello ITI
+</h1>
+
+<div *ngIf="isLogIn ; then thenBlock ; else elseBlock"></div>
+<ng-template #thenBlock>
+    <h2>
+        welcome {{fullname}}
+    </h2>
+</ng-template>
+<ng-template #elseBlock>
+    <h2>
+        this is a Guest
+    </h2>
+</ng-template>
+
+
+
+
+<br>
+<br>
+<br>
+<input [(ngModel)]="fullname" type="text">{{fullname2}}
+
+<br>
+
+<input type="text" #txtvalue>
+<button (click)="Go(txtvalue.value)" >log Data</button>
+
+<br>
+
+<input type="button" value="Go Event" (click) = "great()">

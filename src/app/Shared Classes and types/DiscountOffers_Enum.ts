@@ -1,6 +1,7 @@
-enum DiscountOffers
+export enum DiscountOffers
 {
     stateOne="No Discount",
-    stateTwo="10%",
-    stateThree="15%"
+    stateTwo=.1,
+    stateThree=.15
+
 }

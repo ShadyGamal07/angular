@@ -1,4 +1,4 @@
-interface IProduct
+export interface IProduct
 {
     ID:number;
     Name:string;
@@ -6,3 +6,4 @@ interface IProduct
     Price:number;
     Img:string;
 }
+
