@@ -1,7 +1,9 @@
 <!-- <app-header></app-header> -->
 <!-- <app-binding></app-binding> -->
 
-<app-body></app-body>
+<!-- <app-body></app-body> -->
+<app-products (dataFromChild)="dataFromChild=$event" [parentData]="msg"></app-products>
+{{dataFromChild}}
 <!-- <h1>Shady Gamal </h1> -->
 <router-outlet></router-outlet>
 <!-- <app-footer></app-footer> -->

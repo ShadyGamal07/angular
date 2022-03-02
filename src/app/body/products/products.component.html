@@ -47,5 +47,30 @@
 <input [(ngModel)]="clientName" type="text" #txtvalue placeholder="Enter The name of client ">
 <button (click)="toggleShow()" >Buy</button>
 
+<br>
+<br>
+
+{{parentData}}
+
+<button (click)="send()">Sent Data To Perent</button>
+
+
+
+<!-- ------------------------------------------------- -->
+
+<hr>
+<div *ngFor="let i of productList">
+    {{i.ID}}
+    {{i.Name}}
+    {{i.Quantity}}
+    {{i.Price}}
+    <img [src]="i.Img">
+
+</div>
+<hr>
+<!-- ------------------------------------------------------ -->
+
+<h3> {{"ProductDetails:  ID :" + ProductID.ID + "   , Name   " + ProductID.Name + ",  Price "+ProductID.Price }} </h3> 
+
 
 

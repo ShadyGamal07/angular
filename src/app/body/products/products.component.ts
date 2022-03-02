@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IProduct } from '../../Shared Classes and types/IProduct_Interface';
 import { ICategory } from '../../Shared Classes and types/ICategory_Interface';
 import { DiscountOffers } from '../../Shared Classes and types/DiscountOffers_Enum';
+import { ProductServiceService } from 'src/app/services/product-service.service';
+
 
 @Component({
   selector: 'app-products',
@@ -14,11 +16,12 @@ export class ProductsComponent implements OnInit {
   clientName:string
   isPurshased:boolean
   Discount:DiscountOffers=DiscountOffers.stateThree;
+  // Discount:DiscountOffers;
   ProductList:IProduct[];
   CategoryList:ICategory[];
 
 
-  constructor() { 
+  constructor(private productService:ProductServiceService) { 
     this.storeName="Shady Store"
     // this.storeLogo="../../../../images/1.jpg";
     this.storeLogo="../../../assets/1.jpg"
@@ -57,7 +60,35 @@ export class ProductsComponent implements OnInit {
   
 
 
+
+
+  renderValues(){
+
+  }
+  
+  @Input() parentData:any;
+  @Output() dataFromChild = new EventEmitter();
+
+
+  
+
+  send(){
+    this.dataFromChild.emit("Hello Parent From Child");
+  }
+
+  printMsg(){
+    console.log("Hello Parent iam executed");
+  }
+
+
+
+  productList:any;  
+  ProductID:any;  
+
   ngOnInit(): void {
+    this.productList=this.productService.GetAllProducts();
+    this.ProductID=this.productService.GetProductById(1);
+
   }
 
 }
