@@ -9,7 +9,10 @@ import { BodyComponent } from './body/body.component';
 import { ProductsComponent } from './body/products/products.component';
 import { BindingComponent } from './binding/binding.component';
 import { FormsModule } from '@angular/forms';
-
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { UsersComponent } from './users/users.component';
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +20,16 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     BodyComponent,
     ProductsComponent,
-    BindingComponent    
+    BindingComponent,
+    HomeComponent,
+    NotFoundComponent,
+    UsersComponent    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,31 @@
+<p 
+style=
+"margin: 5px;
+font-size: 30px;
+text-align: center;
+text-transform:uppercase;
+margin-top: 100px;
+margin-bottom: 100px;
+ " 
+ >The Home Of Page </p>
+
+
+ <div style="text-align: center; padding: 25px;">
+    <h1> {{storeName |uppercase }} </h1> 
+
+<!-- <img src="../../../../images/1.jpg" > -->
+    <img [src]="storeLogo" alt="logo image" >
+    <h3 *ngIf="!isNoDiscount"> 
+        We offer an explicit discount of {{ Discount|percent }} 
+    </h3>
+    
+    
+    <form action="" >
+        <input list="the category" placeholder="Enter Your the category " >
+        <datalist id="the category" >
+            <option value={{item.Name}} *ngFor="let item of CategoryList">
+        </datalist>
+    </form>
+
+ </div>
+ 

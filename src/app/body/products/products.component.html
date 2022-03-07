@@ -1,25 +1,13 @@
-<h1> {{storeName |uppercase }} </h1> 
-
-<!-- <img src="../../../../images/1.jpg" > -->
-<img [src]="storeLogo" alt="logo image" >
-
-<h3 *ngIf="!isNoDiscount"> 
-    We offer an explicit discount of {{ Discount|percent }} 
-</h3>
 
 
-<form action="" >
-    <input list="the category" placeholder="Enter Your the category " >
-    <datalist id="the category" >
-        <option value={{item.Name}} *ngFor="let item of CategoryList">
-    </datalist>
-</form>
+<div style="text-align: center;">
+    <B style="font-size: 30px; text-transform: uppercase;">Our Products</B>
 
 
-<div *ngIf="IsPurshased ; then thenBlock ; else elseBlock"></div>
+    <div *ngIf="IsPurshased ; then thenBlock ; else elseBlock"></div>
 
 <ng-template #thenBlock>
-    <table border="2">
+    <table border="2" style="margin-left: 250px;">
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -44,8 +32,8 @@
     </div>
 </ng-template>
 
-<input [(ngModel)]="clientName" type="text" #txtvalue placeholder="Enter The name of client ">
-<button (click)="toggleShow()" >Buy</button>
+<input [(ngModel)]="clientName" type="text" #txtvalue placeholder="Enter The name of client " style="width: 35%; padding: 15px; margin: 15px;">
+<button (click)="toggleShow()" style="padding: 20px ; margin: 20px; color: blueviolet;"  >Buy</button>
 
 <br>
 <br>
@@ -71,6 +59,10 @@
 <!-- ------------------------------------------------------ -->
 
 <h3> {{"ProductDetails:  ID :" + ProductID.ID + "   , Name   " + ProductID.Name + ",  Price "+ProductID.Price }} </h3> 
+
+
+
+</div>
 
 
 
